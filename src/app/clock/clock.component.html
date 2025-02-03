@@ -1,0 +1,33 @@
+@if (clockState) {
+<div class="section card" [style.--theme]="clockState.clock.color">
+    <header>
+        <h2 class="page-title">Timer</h2>
+        <nav>
+            <ul class="tabs">
+                <li class="tab"><a routerLink="/clock/1" routerLinkActive="active">Pomodoro</a></li>
+                <li class="tab"><a routerLink="/clock/2" routerLinkActive="active">Short Break</a></li>
+                <li class="tab"><a routerLink="/clock/3" routerLinkActive="active">Long Break</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <article>
+        <div class="clock">
+            <div class="circle" [style.backgroundImage]="this.clockState.progress()">
+                <div class="time">{{ clockState.milliseconds | time }}</div>
+            </div>
+        </div>
+        <div class="round">#{{ clockState.round }}</div>
+
+        <div class="clock-ctrl">
+            @if (clockState.isStart) {
+            <button (click)="clockState.stop()">Stop</button>
+            <button (click)="clockState.nextStage()">Skip</button>
+            }
+            @else {
+            <button (click)="clockState.start()">Start</button>
+            }
+        </div>
+    </article>
+</div>
+}

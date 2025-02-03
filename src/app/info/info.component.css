@@ -1,0 +1,22 @@
+.section {
+    max-width: 600px;
+    height: 100%;
+    color: var(--txt-color);
+    padding: 20px;
+    margin: 0 auto;
+    border-radius: 8px;
+    font-family: fangsong;
+}
+
+.page-title {
+    letter-spacing: 2px;
+    color: lawngreen;
+    font-family: math;
+}
+
+.hide {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}

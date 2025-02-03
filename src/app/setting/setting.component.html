@@ -1,0 +1,57 @@
+<div class="section card" [style.--theme]="settingForm.value.color">
+    <header>
+        <h2 class="page-title">Timer Setting</h2>
+        <nav>
+            <ul class="tabs">
+                <li class="tab"><a routerLink="/setting/1" routerLinkActive="active">Pomodoro</a></li>
+                <li class="tab"><a routerLink="/setting/2" routerLinkActive="active">Short Break</a></li>
+                <li class="tab"><a routerLink="/setting/3" routerLinkActive="active">Long Break</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <form class="setting-form" [formGroup]="settingForm" (ngSubmit)="save()">
+        <div>
+            <label for="minutes" class="field">
+                <p>Minutes</p>
+                <input type="number" id="minute" name="minute" min="1" step="1" class="input" placeholder="min"
+                    formControlName="minute">
+            </label>
+
+            @if(settingForm.value.interval) {
+            <label for="interval" class="field">
+                <p>Interval</p>
+                <input type="number" id="interval" name="interval" min="1" step="1" class="input"
+                    formControlName="interval">
+            </label>
+            }
+
+            <label for="autoStart" class="field">
+                <p>Auto Start</p>
+                <input type="checkbox" id="autoStart" name="autoStart" class="checkbox" formControlName="autoStart">
+            </label>
+
+            <label for="sound" class="field">
+                <p>Sound</p>
+                <select id="sound" name="sound" formControlName="sound" (change)="playAudio()">
+                    @for (audio of audioFiles; track $index) {
+                    <option [value]="audio.path">{{ audio.name }}</option>
+                    }
+                </select>
+            </label>
+
+            <label for="sound" class="field">
+                <p>Theme</p>
+                <select id="color" name="color" formControlName="color" (change)="changeTheme()">
+                    @for (color of colors; track $index) {
+                    <option [value]="color">{{ color }}</option>
+                    }
+                </select>
+            </label>
+        </div>
+
+        <div class="form-ctrl">
+            <button type="submit">save</button>
+        </div>
+    </form>
+</div>

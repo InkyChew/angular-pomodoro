@@ -1,0 +1,26 @@
+@if (pageState) {
+  <div class="home" [style.--theme]="pageState.color">
+      <header>
+          <h1 class="app-title">Pomodoro</h1>
+          <nav>
+              <ul class="tabs">
+                  <li class="tab"><a [routerLink]="['/clock', tab]" routerLinkActive="active"><i
+                              class="fa-solid fa-stopwatch"></i></a></li>
+                  <li class="tab"><a [routerLink]="['/setting', tab]" routerLinkActive="active"><i
+                              class="fa-solid fa-gear"></i></a></li>
+                  <li class="tab"><a routerLink="info" routerLinkActive="active"><i
+                              class="fa-solid fa-circle-info"></i></a>
+                  </li>
+              </ul>
+          </nav>
+      </header>
+  
+      <main [@pageTransition]="pvar" [@tabTransition]="tvar">
+          <router-outlet />
+      </main>
+  
+      <footer>
+          © <a href="https://inkychew.github.io/about/" target="_blank">InkyChew</a> 2025
+      </footer>
+  </div>
+  }
