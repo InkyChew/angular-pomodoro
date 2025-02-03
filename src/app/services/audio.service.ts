@@ -10,7 +10,7 @@ export class AudioService {
   constructor() { }
 
   play(src: string) {
-    this._audioPlayer?.pause();
+    this.clear();
     this._audioPlayer = new Audio(src);
     this._audioPlayer.play();
   }
