@@ -13,10 +13,10 @@ and increase productivity.
 4. Repeat: After completing four pomodoros, take a longer break.
 
 ## Todo
-1. - [x] IndexedDB for preferences.
-2. - [x] Worker APIs for preventing the browser from interfering with the timer.
-3. - [x] State Design Pattern to manage the different timers and pages, such as the Pomodoro, short break, and long break states.
-4. - [x] Factory Method Design pattern to create different states dynamically.
-5. - [x] Angular Animations to provide smooth and fluid transitions between different pages and timer.
-6. - [x] Keyboard shortcut for controlling the app.
-7. - [x] Mobile gesture for controlling the app.
+- [x] IndexedDB for preferences.
+- [x] Worker APIs for preventing the browser from interfering with the timer.
+- [x] State Design Pattern to manage the different timers and pages, such as the Pomodoro, short break, and long break states.
+- [x] Factory Method Design pattern to create different states dynamically.
+- [x] Angular Animations to provide smooth and fluid transitions between different pages and timer.
+- [x] Keyboard shortcut for controlling the app.
+- [x] Mobile gesture for controlling the app.
