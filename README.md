@@ -1,27 +1,22 @@
 # Pomodoro
+The Pomodoro Technique is a time management method that breaks down work into intervals, traditionally 25
+minutes in length, separated by 1 short breaks. Each interval is known as a pomodoro. After completing four
+pomodoros, you take a longer break, usually 15-30 minutes. This method helps improve focus, reduce distractions,
+and increase productivity.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.5.
+[online pomodoro](https://inkychew.github.io/angular-pomodoro/)
 
-## Development server
+## How to use?
+1. Set Your Timer: Customize timers' durations, color schemes, and sound preferences.
+2. Start Working: Press start and focus on your task for the set amount of time.
+3. Take a Break: Once the timer goes off, take a short break.
+4. Repeat: After completing four pomodoros, take a longer break.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Todo
+1. - [x] IndexedDB for preferences.
+2. - [x] Worker APIs for preventing the browser from interfering with the timer.
+3. - [x] State Design Pattern to manage the different timers and pages, such as the Pomodoro, short break, and long break states.
+4. - [x] Factory Method Design pattern to create different states dynamically.
+5. - [x] Angular Animations to provide smooth and fluid transitions between different pages and timer.
+6. - [x] Keyboard shortcut for controlling the app.
+7. - [x] Mobile gesture for controlling the app.
