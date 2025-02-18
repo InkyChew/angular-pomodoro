@@ -6,7 +6,6 @@ import { ClockService } from '../services/clock.service';
 import { SettingService } from '../services/setting.service';
 import { IClockState } from '../models/clock-state';
 import { AudioService } from '../services/audio.service';
-import { ClockPage, IPageState } from '../models/page-state';
 import { AppComponent } from '../app.component';
 
 @Component({
@@ -17,20 +16,16 @@ import { AppComponent } from '../app.component';
   styleUrl: './clock.component.css'
 })
 export class ClockComponent {
+
   clockState?: IClockState;
   focusTimes: number = this._service.getFocusTimes();
-  private _pageState?: IPageState;
-  
+
   constructor(public router: Router,
     private _service: ClockService,
     private _settingService: SettingService,
     public audioService: AudioService,
     private _appComponent: AppComponent
   ) { }
-
-  private get pageState(): IPageState {
-    return this._pageState ? this._pageState : new ClockPage(this._appComponent);
-  }
 
   ngOnInit() {
     this.clockState?.stop();
@@ -46,7 +41,7 @@ export class ClockComponent {
 
   nextStage(stage: Stage) {
     const n = stage - this.clockState!.clock.id;
-    this.pageState.tab(n);
+    this._appComponent.pageState!.tab(n);
   }
 
   @HostListener('window:keydown', ['$event'])
